@@ -10,10 +10,12 @@ const { listComments, createComment } = require('./lib/comments');
 app.use(cors());
 app.use(express.json());
 
+const URL = process.env.URL;
+
 // Add this to where your other requires are
 const io = require('socket.io')(http, {
 	cors: {
-		origin: 'http://localhost:3000',
+		origin: URL,
 	},
 });
 
