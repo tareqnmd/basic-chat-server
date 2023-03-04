@@ -31,12 +31,12 @@ app.post('/user', (req, res) => {
 	res.json(user);
 });
 
-app.get('/comments', (req, res) => {
+app.get('/chats', (req, res) => {
 	const comments = listComments();
 	res.json(comments);
 });
 
-app.post('/comments', async (req, res) => {
+app.post('/chat', async (req, res) => {
 	const comment = createComment(req.body);
 	io.emit('new-comment', { comment });
 	res.json(comment);
