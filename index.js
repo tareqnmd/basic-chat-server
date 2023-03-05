@@ -27,8 +27,7 @@ io.on('connection', (socket) => {
 });
 
 app.post('/user', (req, res) => {
-	const user = getUser(req.body);
-	res.json(user);
+	res.json({ id: 3, name: 'tareq', email: 'gg@dd.com' });
 });
 
 app.get('/chats', (req, res) => {
